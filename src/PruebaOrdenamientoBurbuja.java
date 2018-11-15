@@ -36,6 +36,18 @@ class MetodoDeOrdenamientoBurbuja{
 		tiempoEjecucion=tiempoFin-tiempoInicio;
 	}
 	
+	public void ordenamientoBurbuja1(int[] datos){
+		int aux=0;
+		for(int i=2;i<datos.length;i++){
+			for(int j=0;j<(datos.length-i);j++){
+				if(datos[j]>datos[j+1]){
+					aux=datos[j];
+					datos[j]=datos[j+1];
+					datos[j+1]=aux;
+				}
+			}
+		}
+	}
 }
 
 public class PruebaOrdenamientoBurbuja {
@@ -48,15 +60,24 @@ public class PruebaOrdenamientoBurbuja {
 		System.out.println("=================VECTOR ORIGINAL======================");
 		burbuja.mostrarVector(edades);
 		System.out.println();
-		System.out.println("===============ORDENAMIENTO BURBUJA====================");
-		burbuja.ordenamientoBurbuja0(edades);
-		burbuja.mostrarVector(edades);
-				
-		System.out.println("DATOS DE EFICICENCIA DEL ALGORITMO");
+		System.out.println("===============ORDENAMIENTO BURBUJA===================");
+		//burbuja.ordenamientoBurbuja0(edades);
+		//burbuja.mostrarVector(edades);
+		System.out.println();
+		System.out.println();
+		
+		/*System.out.println("DATOS DE EFICICENCIA DEL ALGORITMO DE ORDENAMIENTOBURBUJA0");
 		System.out.println();
 		System.out.println("    - Cantidad de recorridos realizados: "+burbuja.contadorComparaciones);
 		System.out.println("    - Cantidad de comparaciones realizadas: "+burbuja.contadorComparaciones);
 		System.out.println("    - Cantidad de intercambios realizados: "+burbuja.contadorIntercambios);
-		System.out.println("    - Tiempo total de ejecucion: "+burbuja.tiempoEjecucion);
+		System.out.println("    - Tiempo total de ejecucion: "+burbuja.tiempoEjecucion);*/
+		
+		burbuja.ordenamientoBurbuja1(edades);
+		burbuja.mostrarVector(edades);
+		
+		
+		
+		
 	}
 }
