@@ -38,8 +38,8 @@ class MetodoDeOrdenamientoBurbuja{
 	
 	public void ordenamientoBurbuja1(int[] datos){
 		int aux=0;
-		for(int i=2;i<datos.length;i++){
-			for(int j=0;j<(datos.length-i);j++){
+		for(int i=2;i<=datos.length;i++){
+			for(int j=0;j<=(datos.length-i);j++){
 				if(datos[j]>datos[j+1]){
 					aux=datos[j];
 					datos[j]=datos[j+1];
